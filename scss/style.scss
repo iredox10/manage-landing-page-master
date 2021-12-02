@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin get-started {
+    padding: .8rem 1rem;
+    background: hsl(12, 88%, 59%);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px 2px hsl(12, 88%, 59%,.4);
+}
+
+body{
+    font-family: 'Be Vietnam Pro',
+    sans-serif;;
+}
+header{
+    display: flex;
+    padding: 1rem;
+    nav{
+        position: absolute;
+        top: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: .5rem;
+        width: 80%;
+        transition: all .5s ease;
+        ul{
+            list-style-type: none;
+            background: #fff;
+            padding: 1rem;
+            text-transform: capitalize;
+            text-align: center;
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0,0,0,.3);
+                top: -5rem;
+                left: -3rem;
+                z-index: -3;
+            }
+            li{
+                margin: 1rem;
+                a{
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    .hamburger-menu{
+        position: absolute;
+        right: 0;
+        z-index: 3;
+        cursor: pointer;
+        .hamburger{
+            display: none;
+        }
+    }
+    .toggle{
+        transform: translateX(100vw);
+    }
+}
+
+.top{
+    padding: 2rem;
+    text-align: center;
+    .illustration img{
+        width: 100%;
+    }
+    .text{
+        .title{
+            font-size: 3rem;
+        }
+        .detail{
+            font-size: 1.3rem;
+            margin: 1rem 0;
+        }
+        .get-started{
+            @include get-started()
+        }
+    }
+}
